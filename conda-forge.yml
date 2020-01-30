@@ -1,1 +1,31 @@
-[]
+#
+# See: https://github.com/conda-forge/conda-smithy
+# See: https://conda-forge.org/docs/maintainer/conda_forge_yml.html
+#
+# Remember to setup BINSTAR_TOKEN in:
+#   anaconda.org (Settings -> Access)
+#   azure (could not make it work setting it in a Library, so just do for the pipeline: pipeline -> Edit -> Variables (make secret))
+# Make sure not to leak secrets!
+#
+
+channels:
+  sources:
+    - sdvillal
+    - conda-forge
+    - defaults
+  targets:
+    - ["sdvillal", "main"]
+
+provider:
+  linux: azure
+  osx: azure
+  win: azure
+
+github:
+  user_or_org: sdvillal
+  branch_name: master
+
+azure:
+  user_or_org: sdvillal
+  upload_packages: True
+  force: False

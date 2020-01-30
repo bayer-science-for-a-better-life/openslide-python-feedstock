@@ -1,0 +1,5 @@
+channel_sources:
+  - sdvillal,conda-forge,defaults
+
+channel_targets:
+  - sdvillal main
